@@ -10,7 +10,7 @@ DEPENDENCIES
 COPYRIGHT AND LICENCE
 
 
-This library is free software; you can redistribute it and/or modify it.
+This is a free software; you can redistribute it and/or modify it.
 
 
 MOTIVATION
