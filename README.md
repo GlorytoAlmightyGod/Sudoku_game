@@ -47,7 +47,7 @@ u      > > > undo
 
 r       > > > reset puzzle
 
-e      > >  > check instantaneous score and puzzle verification
+e      > >  > puzzle verification
 
 p      >  >  >pause game
 
