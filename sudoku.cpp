@@ -12,17 +12,13 @@ using namespace std;
 void reseter();
 void saver(int);
 void loadgame();
-int scorer(int);
 void questionchooser(int );
 
 char solid[9][9][1000],sudoku[9][9],question[9][9],answer[9][9],ch,e,c,d,f;
-int i=0,j=0,r,flag=0,flag1=1,gd=DETECT,gm,flag4=0,flag5=0,x=120,y=30,flag2=0,flag6=0,k,l,flag0[9][9],coun=0,counter=0,timer=0,highscore;
+int i=0,j=0,r,flag=0,flag1=1,gd=DETECT,gm,flag4=0,flag5=0,x=120,y=30,flag2=0,flag6=0,k,l,flag0[9][9],coun=0,counter=0,timer=0,;
 
 int main()
 {
-ifstream File2("highscore.txt");
-		highscore=File2.get();		//storing value of highscore from file highscore.txt in a variable
-		File2.close();
 
 for(i=0;i<9;i++)
 {
@@ -409,7 +405,6 @@ for(i=0;i<9;i++)
 
 	else if(c=='e')
 	{
-		cout<<"your present score is "<<scorer(timer)<<"\t out of 1000";		//for evaluating score and answer
 		for(i=0;i<9;i++)
 		{
 			for(j=0;j<9;j++)
@@ -495,7 +490,6 @@ for(i=0;i<9;i++)
 
 		if(getch()=='\r')
 		{
-				cout<<"your present score is "<<scorer(timer)+1<<"\t out of 1000";		//for evaluating score and answer
 			for(i=0;i<9;i++)
 			{
 				for(j=0;j<9;j++)
@@ -522,14 +516,6 @@ for(i=0;i<9;i++)
 				}
 			}
 
-					if(scorer(timer)<=highscore)
-					{
-					ofstream File4("highscore.txt");
-					File4<<scorer(timer)+1;						//storing high score in a file if score overwhelms highscore named highscore.txt
-					File4<<"";
-						File4.close();
-					}
-						cout<<"HIGHSCORE is "<<highscore+615<<endl;
 				exit(0);
 		}
 	}
@@ -616,12 +602,6 @@ for(i=0;i<9;i++)
         setcolor(LIGHTGREEN);
 		outtextxy(x-5,y," ");
 	}
-		ofstream File0("score.txt");
-		File0<<scorer(timer);						//storing instantaneous score in a file named score.txt
-		File0<<"";
-		File0.close();
-
-
 }
 closegraph();
 return 0;
@@ -712,10 +692,6 @@ void saver(int r)							//function which is called when enter is pressed after p
 				}
 				File3.close();
 			}
-}
-int scorer(int x)
-{
-	return (750-x);
 }
 void loadgame()
 {
